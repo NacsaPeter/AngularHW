@@ -1,0 +1,40 @@
+.table-container {
+    position: relative;
+    min-height: 600px;
+
+    .table-position {
+        position: absolute;
+        left: 10%;
+        top: 60px;
+        width: 100%;
+    }
+
+    .input-container {
+        position: absolute;
+        left: 10%;
+        top: 10px;
+    }
+
+    .team-details {
+        position: absolute;
+        right: 10%;
+        top: 13px;
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+
+    .table-loading-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+    }
+}
