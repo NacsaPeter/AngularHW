@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ITeamViewModel } from '../models/player.model';
 import { ActivatedRoute } from '@angular/router';
 import { FootballClientService } from '../client/football-api-client.service';
-import { map, catchError, finalize } from 'rxjs/operators';
+import { map, catchError, finalize, filter, tap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { NewPlayerComponent } from '../components/new-player.component';
 
@@ -40,6 +40,11 @@ export class PlayerListPageComponent {
     }
 
     addPlayer() {
-        // this.dialog.open(NewPlayerComponent);
+        const dialogRef = this.dialog.open(NewPlayerComponent);
+
+        dialogRef.afterClosed().pipe(
+            filter(o => !!o),
+            tap(o => this.team.players.push(o))
+        ).subscribe();
     }
 }

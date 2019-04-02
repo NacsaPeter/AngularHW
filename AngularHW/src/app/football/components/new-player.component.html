@@ -1,2 +1,43 @@
-<h3>Add new player</h3>
-<button type="submit" mat-flat-button [disabled]="!loginForm.form.valid">Add</button>
+<form (ngSubmit)="addPlayer()" [formGroup]="playerForm">
+    <h3>Add new player</h3>
+    <div style="margin-top: 20px;">
+        <mat-form-field style="margin-right: 20px;">
+            <input type="number" matInput placeholder="Number" formControlName="number" [(ngModel)]="player.number">
+            <mat-error
+                *ngIf="(playerForm.get('number').dirty || playerForm.get('number').touched) && playerForm.get('number').hasError('number')">
+                {{ playerForm.get('number').getError('number').message }}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Name" formControlName="name" [(ngModel)]="player.name">
+        </mat-form-field>
+    </div>
+    <div style="margin-top: 10px;">
+        <mat-form-field style="margin-right: 20px;">
+            <mat-select placeholder="Poistion" formControlName="position" [(ngModel)]="player.position">
+                <mat-option [value]="'Goalkeeper'">Goalkeeper</mat-option>
+                <mat-option [value]="'Right-back'">Right-back</mat-option>
+                <mat-option [value]="'Centre-back'">Centre-back</mat-option>
+                <mat-option [value]="'Left-back'">Left-back</mat-option>
+                <mat-option [value]="'Defensive midfielder'">Defensive midfielder</mat-option>
+                <mat-option [value]="'Central midfielder'">Central midfielder</mat-option>
+                <mat-option [value]="'Attacking midfielder'">Attacking midfielder</mat-option>
+                <mat-option [value]="'Left winger'">Left winger</mat-option>
+                <mat-option [value]="'Right winger'">Right winger</mat-option>
+                <mat-option [value]="'Centre-forward'">Centre-forward</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Nation" formControlName="nation" [(ngModel)]="player.nation">
+        </mat-form-field>
+    </div>
+    <div style="margin-top: 10px;">
+        <mat-form-field style="margin-right: 20px;">
+            <input type="number" matInput placeholder="Market value" formControlName="marketValue" [(ngModel)]="player.marketValue">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="date" matInput placeholder="Birthday" formControlName="birthday" [(ngModel)]="player.dateOfBirth">
+        </mat-form-field>
+    </div>
+    <button style="margin-top: 20px; float: right;" type="submit" mat-flat-button>Add</button>
+</form>

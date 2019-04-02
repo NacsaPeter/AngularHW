@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { AgePipe } from './pipes/age.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AgePipe } from './pipes/age.pipe';
     MatProgressSpinnerModule,
     HttpClientModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   exports: [
     CommonModule,
@@ -40,6 +42,7 @@ import { AgePipe } from './pipes/age.pipe';
     MatProgressSpinnerModule,
     HttpClientModule,
     MatSelectModule,
+    MatDialogModule,
     AgePipe,
   ]
 })
