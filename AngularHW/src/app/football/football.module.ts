@@ -6,6 +6,8 @@ import { TeamListPageComponent } from './pages/team-list.page.component';
 import { PlayerListPageComponent } from './pages/player-list.page.component';
 import { FootballClientService } from './client/football-api-client.service';
 import { NewPlayerComponent } from './components/new-player.component';
+import { FakeBackendInterceptor } from './client/mock/fake-football-api-client.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { NewPlayerComponent } from './components/new-player.component';
     FootballRoutingModule,
   ],
   providers: [
-    FootballClientService
+    FootballClientService,
+    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true }
   ],
   entryComponents: [
     NewPlayerComponent

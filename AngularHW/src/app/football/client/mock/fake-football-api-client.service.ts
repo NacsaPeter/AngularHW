@@ -11,57 +11,113 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { ITeamViewModel } from '../../models/player.model';
 import { ITeamListViewModel } from '../../models/team.model';
 
-export const playersMock: ITeamViewModel = {
-    id: 8,
-    name: 'Borussia Dortmund',
-    country: 'Germany',
-    players: [
-        {
-            id: 1, number: 1, name: 'Roman Bürki', position: 'Goalkeeper', dateOfBirth: new Date(1990, 10, 14),
-            nation: 'Switzerland', marketValue: 14, isFavourite: false
-        },
-        {
-            id: 2, number: 16, name: 'Manuel Akanji', position: 'Centre-back', dateOfBirth: new Date(1995, 6, 19),
-            nation: 'Switzerland', marketValue: 40, isFavourite: false
-        },
-        {
-            id: 3, number: 4, name: 'Abdou Diallo', position: 'Centre-back', dateOfBirth: new Date(1996, 4, 4),
-            nation: 'France', marketValue: 33, isFavourite: false
-        },
-        {
-            id: 4, number: 2, name: 'Dan-Axel Zagadou', position: 'Centre-back', dateOfBirth: new Date(1999, 5, 3),
-            nation: 'France', marketValue: 30, isFavourite: false
-        },
-        {
-            id: 5, number: 5, name: 'Achraf Hakimi', position: 'Right-back', dateOfBirth: new Date(1998, 10, 4),
-            nation: 'Morocco', marketValue: 30, isFavourite: false
-        },
-        {
-            id: 6, number: 28, name: 'Axel Witsel', position: 'Defensive Midfield', dateOfBirth: new Date(1989, 0, 30),
-            nation: 'Belgium', marketValue: 40, isFavourite: false
-        },
-        {
-            id: 7, number: 6, name: 'Thomas Delaney', position: 'Central Midfield', dateOfBirth: new Date(1991, 8, 3),
-            nation: 'Denmark', marketValue: 27, isFavourite: false
-        },
-        {
-            id: 8, number: 11, name: 'Marco Reus', position: 'Attacking Midfield', dateOfBirth: new Date(1989, 4, 31),
-            nation: 'Germany', marketValue: 50, isFavourite: true
-        },
-        {
-            id: 9, number: 7, name: 'Jadon Sancho', position: 'Right Winger', dateOfBirth: new Date(2000, 2, 25),
-            nation: 'England', marketValue: 80, isFavourite: false
-        },
-        {
-            id: 10, number: 22, name: 'Christian Pulisic', position: 'Right Winger', dateOfBirth: new Date(1998, 8, 18),
-            nation: 'United States', marketValue: 60, isFavourite: false
-        },
-        {
-            id: 11, number: 9, name: 'Paco Alcácer', position: 'Centre-Forward', dateOfBirth: new Date(1993, 7, 30),
-            nation: 'Spain', marketValue: 40, isFavourite: false
-        },
-    ]
-};
+export const playersMock: ITeamViewModel[] = [
+    {
+        id: 1,
+        name: 'FC Barcelona',
+        country: 'Spain',
+        players: []
+    },
+    {
+        id: 2,
+        name: 'Real Madrid',
+        country: 'Spain',
+        players: []
+    },
+    {
+        id: 3,
+        name: 'Atletico Madrid',
+        country: 'Spain',
+        players: []
+    },
+    {
+        id: 4,
+        name: 'Juventus',
+        country: 'Italy',
+        players: []
+    },
+    {
+        id: 5,
+        name: 'Inter Milan',
+        country: 'Italy',
+        players: []
+    },
+    {
+        id: 6,
+        name: 'AC Milan',
+        country: 'Italy',
+        players: []
+    },
+    {
+        id: 7,
+        name: 'Bayern Munich',
+        country: 'Germany',
+        players: []
+    },
+    {
+        id: 8,
+        name: 'Borussia Dortmund',
+        country: 'Germany',
+        players: [
+            {
+                id: 1, number: 1, name: 'Roman Bürki', position: 'Goalkeeper', dateOfBirth: new Date(1990, 10, 14),
+                nation: 'Switzerland', marketValue: 14, isFavourite: false
+            },
+            {
+                id: 2, number: 16, name: 'Manuel Akanji', position: 'Centre-back', dateOfBirth: new Date(1995, 6, 19),
+                nation: 'Switzerland', marketValue: 40, isFavourite: false
+            },
+            {
+                id: 3, number: 4, name: 'Abdou Diallo', position: 'Centre-back', dateOfBirth: new Date(1996, 4, 4),
+                nation: 'France', marketValue: 33, isFavourite: false
+            },
+            {
+                id: 4, number: 2, name: 'Dan-Axel Zagadou', position: 'Centre-back', dateOfBirth: new Date(1999, 5, 3),
+                nation: 'France', marketValue: 30, isFavourite: false
+            },
+            {
+                id: 5, number: 5, name: 'Achraf Hakimi', position: 'Right-back', dateOfBirth: new Date(1998, 10, 4),
+                nation: 'Morocco', marketValue: 30, isFavourite: false
+            },
+            {
+                id: 6, number: 28, name: 'Axel Witsel', position: 'Defensive Midfield', dateOfBirth: new Date(1989, 0, 30),
+                nation: 'Belgium', marketValue: 40, isFavourite: false
+            },
+            {
+                id: 7, number: 6, name: 'Thomas Delaney', position: 'Central Midfield', dateOfBirth: new Date(1991, 8, 3),
+                nation: 'Denmark', marketValue: 27, isFavourite: false
+            },
+            {
+                id: 8, number: 11, name: 'Marco Reus', position: 'Attacking Midfield', dateOfBirth: new Date(1989, 4, 31),
+                nation: 'Germany', marketValue: 50, isFavourite: true
+            },
+            {
+                id: 9, number: 7, name: 'Jadon Sancho', position: 'Right Winger', dateOfBirth: new Date(2000, 2, 25),
+                nation: 'England', marketValue: 80, isFavourite: false
+            },
+            {
+                id: 10, number: 22, name: 'Christian Pulisic', position: 'Right Winger', dateOfBirth: new Date(1998, 8, 18),
+                nation: 'United States', marketValue: 60, isFavourite: false
+            },
+            {
+                id: 11, number: 9, name: 'Paco Alcácer', position: 'Centre-Forward', dateOfBirth: new Date(1993, 7, 30),
+                nation: 'Spain', marketValue: 40, isFavourite: false
+            },
+        ]
+    },
+    {
+        id: 9,
+        name: 'Manchester United',
+        country: 'England',
+        players: []
+    },
+    {
+        id: 10,
+        name: 'Arsenal',
+        country: 'England',
+        players: []
+    },
+];
 
 export const teamsMock: ITeamListViewModel[] = [
     {
@@ -115,30 +171,30 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     ): Observable<HttpEvent<any>> {
 
         return of(null).pipe(
-        //     mergeMap(() => {
-        //         if (request.url.match(/\/books\/\d+$/) && request.method === 'GET') {
-        //             const urlParts = request.url.split('/');
-        //             const id = parseInt(urlParts[urlParts.length - 1], 10);
-        //             const book = detailsMocks.find(x => x.id === id);
-        //             if (book) {
-        //                 return of(new HttpResponse({
-        //                     status: 200,
-        //                     body: book
-        //                 }));
-        //             } else {
-        //                 return throwError({ error: { message: 'Not found' } });
-        //             }
-        //         }
+            mergeMap(() => {
+                if (request.url.match(/\/teams\/\d+$/) && request.method === 'GET') {
+                    const urlParts = request.url.split('/');
+                    const id = parseInt(urlParts[urlParts.length - 1], 10);
+                    const team = playersMock.find(x => x.id === id);
+                    if (team) {
+                        return of(new HttpResponse({
+                            status: 200,
+                            body: team
+                        }));
+                    } else {
+                        return throwError({ error: { message: 'Not found' } });
+                    }
+                }
 
-        //         // pass through any requests not handled above
-        //         return next.handle(request);
-        //     })
-        // )
-        //     // call materialize and dematerialize to ensure delay
-        //     // even if an error is thrown (https://github.com/Reactive-Extensions/RxJS/issues/648)
-        //     .pipe(materialize())
-        //     .pipe(delay(500))
-        //     .pipe(dematerialize()
+                // pass through any requests not handled above
+                return next.handle(request);
+            })
+        )
+            // call materialize and dematerialize to ensure delay
+            // even if an error is thrown (https://github.com/Reactive-Extensions/RxJS/issues/648)
+            .pipe(materialize())
+            .pipe(delay(500))
+            .pipe(dematerialize()
         );
 
     }

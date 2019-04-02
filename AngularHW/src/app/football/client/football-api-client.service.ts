@@ -28,8 +28,7 @@ export class FootballClientService {
   }
 
   getPlayers(id: number): Observable<ITeamViewModel> {
-    const obs = of(playersMock);
-    return obs.pipe(delay(500));
+    return this.http.get<ITeamViewModel>(`/teams/${id}`);
   }
 
 }
